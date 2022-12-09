@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B86C268A-4A44-4E52-B0F7-E3EBB51B50F4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>遥感图像处理作业_1</RootNamespace>
+    <AssemblyName>遥感图像处理作业-1</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=2.2.5.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math, Version=2.2.5.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="DockingToolbar, Version=1.0.2619.19203, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DockingToolbar.dll</HintPath>
+    </Reference>
+    <Reference Include="gdalconst_csharp">
+      <HintPath>..\GDAL1110\gdalconst_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="gdal_csharp">
+      <HintPath>..\GDAL1110\gdal_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics">
+      <HintPath>..\..\王港\packages\MathNet.Numerics.3.20.0\lib\net40\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="ogr_csharp">
+      <HintPath>..\GDAL1110\ogr_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="osr_csharp">
+      <HintPath>..\GDAL1110\osr_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.3.1.24483, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Control\Histogram.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\RSImageViewControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\RSImageViewControl.designer.cs">
+      <DependentUpon>RSImageViewControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistogramWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistogramWindow.Designer.cs">
+      <DependentUpon>HistogramWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MoravecWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MoravecWindow.Designer.cs">
+      <DependentUpon>MoravecWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapForm.Designer.cs">
+      <DependentUpon>MapForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="保存Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="保存Form.Designer.cs">
+      <DependentUpon>保存Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="光谱特征Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="光谱特征Form.Designer.cs">
+      <DependentUpon>光谱特征Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="图像融合Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="图像融合Form1.Designer.cs">
+      <DependentUpon>图像融合Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="监督分类Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="监督分类Form.Designer.cs">
+      <DependentUpon>监督分类Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="分割聚类数Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="分割聚类数Form.Designer.cs">
+      <DependentUpon>分割聚类数Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="图像融合Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="图像融合Form.Designer.cs">
+      <DependentUpon>图像融合Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="地理配准Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="地理配准Form.Designer.cs">
+      <DependentUpon>地理配准Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="影像显示Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="影像显示Form.Designer.cs">
+      <DependentUpon>影像显示Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="影像粗校正Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="影像粗校正Form.Designer.cs">
+      <DependentUpon>影像粗校正Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="特征点提取Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="特征点提取Form.Designer.cs">
+      <DependentUpon>特征点提取Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="辐射定标Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="辐射定标Form.Designer.cs">
+      <DependentUpon>辐射定标Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="遥感影像变化检测Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="遥感影像变化检测Form.Designer.cs">
+      <DependentUpon>遥感影像变化检测Form.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Control\Histogram.resx">
+      <DependentUpon>Histogram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistogramWindow.resx">
+      <DependentUpon>HistogramWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoravecWindow.resx">
+      <DependentUpon>MoravecWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MapForm.resx">
+      <DependentUpon>MapForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="保存Form.resx">
+      <DependentUpon>保存Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="光谱特征Form.resx">
+      <DependentUpon>光谱特征Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="图像融合Form1.resx">
+      <DependentUpon>图像融合Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="监督分类Form.resx">
+      <DependentUpon>监督分类Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="分割聚类数Form.resx">
+      <DependentUpon>分割聚类数Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="图像融合Form.resx">
+      <DependentUpon>图像融合Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="地理配准Form.resx">
+      <DependentUpon>地理配准Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="影像显示Form.resx">
+      <DependentUpon>影像显示Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="影像粗校正Form.resx">
+      <DependentUpon>影像粗校正Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="特征点提取Form.resx">
+      <DependentUpon>特征点提取Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="辐射定标Form.resx">
+      <DependentUpon>辐射定标Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="遥感影像变化检测Form.resx">
+      <DependentUpon>遥感影像变化检测Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
